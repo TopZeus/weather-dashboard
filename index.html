@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ Weather Dashboard</h1>
+            <div class="search-bar">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Enter city name..." 
+                    autocomplete="off"
+                >
+                <button id="searchBtn">Search</button>
+                <button id="locationBtn" title="Use my location">📍</button>
+            </div>
+            <div id="errorMessage" class="error-message"></div>
+        </header>
+
+        <main>
+            <!-- Current Weather -->
+            <section id="currentWeather" class="weather-section hidden">
+                <div class="current-weather-card">
+                    <div class="city-info">
+                        <h2 id="cityName"></h2>
+                        <p id="date"></p>
+                    </div>
+                    <div class="weather-main">
+                        <img id="weatherIcon" src="" alt="Weather icon">
+                        <div class="temperature-info">
+                            <div id="temperature" class="temperature"></div>
+                            <p id="description"></p>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail">
+                            <span class="label">Feels Like</span>
+                            <span id="feelsLike"></span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Humidity</span>
+                            <span id="humidity"></span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Wind Speed</span>
+                            <span id="windSpeed"></span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Pressure</span>
+                            <span id="pressure"></span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">UV Index</span>
+                            <span id="uvIndex"></span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Visibility</span>
+                            <span id="visibility"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast -->
+            <section id="forecastSection" class="weather-section hidden">
+                <h3>5-Day Forecast</h3>
+                <div id="forecast" class="forecast-grid"></div>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
+
+            <!-- Initial State -->
+            <div id="initialState" class="initial-state">
+                <p>Search for a city or use your current location to see the weather</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Data provided by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
